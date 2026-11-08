@@ -17,7 +17,9 @@
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const $q = useQuasar()
 
 const email = ref(null)
@@ -38,6 +40,7 @@ function signin() {
         type: 'positive',
         message: 'Login successful!',
       })
+      router.push('/')
     })
     .catch((error) => {
       console.error(error)
